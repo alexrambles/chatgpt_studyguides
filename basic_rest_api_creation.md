@@ -100,7 +100,6 @@ from flask import Flask, jsonify, request
 2. Creating the Flask App:
 
 ```python
-Copy code
 app = Flask(__name__)
 ```
 - Initializes a new Flask application instance. The __name__ variable tells Flask where to look for resources like templates and static files.
@@ -108,7 +107,6 @@ app = Flask(__name__)
 3. Sample Sales Data:
 
 ```python
-Copy code
 sales_data = [
     {"id": 1, "product": "Laptop", "quantity": 10, "price": 1200},
     {"id": 2, "product": "Mouse", "quantity": 25, "price": 25},
@@ -133,7 +131,6 @@ def get_sales():
 2. GET a Single Sales Record by ID:
 
 ```python
-Copy code
 @app.route('/sales/<int:sale_id>', methods=['GET'])
 def get_sale(sale_id):
     sale = next((item for item in sales_data if item["id"] == sale_id), None)
